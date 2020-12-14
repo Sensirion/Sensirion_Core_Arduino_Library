@@ -1,0 +1,11 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+        - image: sensirion/docker/docker-arduino:0.1.0
+    steps:
+      - checkout
+      - run:
+          name: Compile test AllCommands
+          command: test/compile_test.py -s examples/AllCommands
